@@ -1,4 +1,6 @@
-<h1 align="center">pico-ducky</h1>
+<h1 align="center">Rubber Pico</h1>
+
+![Icon](images/icon.png)
 
 <div align="center">
   <strong>Make a cheap but powerful USB Rubber Ducky with a Raspberry Pi Pico</strong>
@@ -7,19 +9,22 @@
 <br />
 
 <div align="center">
-  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/dbisu/pico-ducky">
-  <img alt="GitHub license" src="https://img.shields.io/github/license/dbisu/pico-ducky">
-  <a href="https://github.com/dbisu/pico-ducky/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/dbisu/pico-ducky"></a>
-  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/dbisu/pico-ducky">
-  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/dbisu/pico-ducky">
+  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/cyklon73/rubber-pico">
+  <img alt="GitHub license" src="https://img.shields.io/github/license/cyklon73/rubber-pico">
+  <a href="https://github.com/cyklon73/rubber-pico/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/cyklon73/rubber-pico"></a>
+  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/cyklon73/rubber-pico">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/cyklon73/rubber-pico">
 </div>
 
 <br />
 
+## Note
+Rubber Pico is a fork of the [pico-ducky](https://github.com/dbisu/pico-ducky) project by [dbisu](https://github.com/dbisu)
+
 ## Quick Start Guide
 Install and have your USB Rubber Ducky working in less than 5 minutes.
 
-1. Download the latest release from the [Releases](https://github.com/dbisu/pico-ducky/releases) page.
+1. Download the latest release from the [Releases](https://github.com/cyklon73/rubber-pico/releases) page.
 
 2. Plug the device into a USB port while holding the boot button. It will show up as a removable media device named RPI-RP2.
 
@@ -43,23 +48,23 @@ Copy the adafruit-circuitpython-raspberry_pi_pico_w-en_US-8.0.0.uf2 file to the 
 
 8. Unplug the device from the USB port and remove the setup jumper.
 
-Enjoy your Pico-Ducky.
+Enjoy your Rubber Pico.
 
 ## Setup mode
 
-To edit the payload, enter setup mode by connecting the pin 1 (`GP0`) to pin 3 (`GND`), this will stop the pico-ducky from injecting the payload in your own machine.
+To edit the payload, enter setup mode by connecting the pin 1 (`GP0`) to pin 3 (`GND`), this will stop the rubber pico from injecting the payload in your own machine.
 The easiest way to do so is by using a jumper wire between those pins as seen bellow.
 
 ![Setup mode with a jumper](images/setup-mode.png)
 
 ## USB enable/disable mode
 
-If you need the pico-ducky to not show up as a USB mass storage device for stealth, follow these instructions.  
+If you need the rubber pico to not show up as a USB mass storage device for stealth, follow these instructions.  
 - Enter setup mode.    
-- Copy your payload script to the pico-ducky.  
+- Copy your payload script to the rubber pico.  
 - Disconnect the pico from your host PC.
 - Connect a jumper wire between pin 18 (`GND`) and pin 20 (`GPIO15`).  
-This will prevent the pico-ducky from showing up as a USB drive when plugged into the target computer.  
+This will prevent the rubber pico from showing up as a USB drive when plugged into the target computer.  
 - Remove the jumper and reconnect to your PC to reprogram.  
 
 Pico: The default mode is USB mass storage enabled.   
@@ -74,7 +79,7 @@ Pico W: The default mode is USB mass storage **disabled**
 
 Install and have your USB Rubber Ducky working in less than 5 minutes.
 
-1. Clone the repo to get a local copy of the files. `git clone https://github.com/dbisu/pico-ducky.git`
+1. Clone the repo to get a local copy of the files. `git clone https://github.com/cyklon73/rubber-pico.git`
 
 2. Download [CircuitPython for the Raspberry Pi Pico](https://circuitpython.org/board/raspberry_pi_pico/). *Updated to 8.0.0  
    Download [CircuitPython for the Raspberry Pi Pico W](https://circuitpython.org/board/raspberry_pi_pico_w/). *Updated to 8.0.0
@@ -100,7 +105,7 @@ Install and have your USB Rubber Ducky working in less than 5 minutes.
 12. *For Pico W Only* Create the file `secrets.py` in the root of the Pico W. This contains the AP name and password to be created by the Pico W.  
 `secrets = { 'ssid' : "BadAPName", 'password' : "badpassword" }`
 
-13. Find a script [here](https://github.com/hak5/usbrubberducky-payloads) or [create your own one using Ducky Script](https://docs.hak5.org/hak5-usb-rubber-ducky/ducky-script-basics/hello-world) and save it as `payload.dd` in the Pico. Currently, pico-ducky only supports DuckyScript 1.0, not 3.0.
+13. Find a script [here](https://github.com/hak5/usbrubberducky-payloads) or [create your own one using Ducky Script](https://docs.hak5.org/hak5-usb-rubber-ducky/ducky-script-basics/hello-world) and save it as `payload.dd` in the Pico. Currently, rubber pico only supports DuckyScript 1.0, not 3.0.
 
 14. Be careful, if your device isn't in [setup mode](#setup-mode), the device will reboot and after half a second, the script will run.
 
@@ -126,19 +131,19 @@ API endpoints
 
 ## Setup mode
 
-To edit the payload, enter setup mode by connecting the pin 1 (`GP0`) to pin 3 (`GND`), this will stop the pico-ducky from injecting the payload in your own machine.
+To edit the payload, enter setup mode by connecting the pin 1 (`GP0`) to pin 3 (`GND`), this will stop the rubber pico from injecting the payload in your own machine.
 The easiest way to do so is by using a jumper wire between those pins as seen bellow.
 
 ![Setup mode with a jumper](images/setup-mode.png)
 
 ## USB enable/disable mode
 
-If you need the pico-ducky to not show up as a USB mass storage device for stealth, follow these instructions.  
+If you need the rubber pico to not show up as a USB mass storage device for stealth, follow these instructions.  
 - Enter setup mode.    
-- Copy your payload script to the pico-ducky.  
+- Copy your payload script to the rubber pico.  
 - Disconnect the pico from your host PC.
 - Connect a jumper wire between pin 18 (`GND`) and pin 20 (`GPIO15`).  
-This will prevent the pico-ducky from showing up as a USB drive when plugged into the target computer.  
+This will prevent the rubber pico from showing up as a USB drive when plugged into the target computer.  
 - Remove the jumper and reconnect to your PC to reprogram.  
 
 Pico: The default mode is USB mass storage enabled.   
@@ -159,7 +164,7 @@ To select a payload, ground one of these pins:
 
 Copied from [Neradoc/Circuitpython_Keyboard_Layouts](https://github.com/Neradoc/Circuitpython_Keyboard_Layouts/blob/main/PICODUCKY.md)  
 
-#### How to use one of these layouts with the pico-ducky repository.
+#### How to use one of these layouts with the rubber pico repository.
 
 **Go to the [latest release page](https://github.com/Neradoc/Circuitpython_Keyboard_Layouts/releases/latest), look if your language is in the list.**
 
@@ -193,7 +198,7 @@ This is what it should look like **if your language is French for example**.
 
 ![CIRCUITPY drive screenshot](https://github.com/Neradoc/Circuitpython_Keyboard_Layouts/raw/main/docs/drive_pico_ducky.png)
 
-#### Modify the pico-ducky code to use your language file:
+#### Modify the rubber pico code to use your language file:
 
 At the start of the file comment out these lines:
 
@@ -246,14 +251,6 @@ You can find the tool [here](https://github.com/raspberrydeveloper/pyducky)
 
 ### Video tutorials
 
-[pico-ducky tutorial by **NetworkChuck**](https://www.youtube.com/watch?v=e_f9p-_JWZw)
-
 [USB Rubber Ducky playlist by **Hak5**](https://www.youtube.com/playlist?list=PLW5y1tjAOzI0YaJslcjcI4zKI366tMBYk)
 
 [CircuitPython tutorial on the Raspberry Pi Pico by **DroneBot Workshop**](https://www.youtube.com/watch?v=07vG-_CcDG0)
-
-
-## Related Projects
-
-[Defcon31-ducky](https://github.com/iot-pwn/defcon31-ducky)  
-There are still a few of these available to purchase, US only.
