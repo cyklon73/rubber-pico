@@ -1,5 +1,7 @@
-REM The next four lines open Notepad in Windows and type "Hello World!"
+REM The next seven lines open Notepad in Windows and type "Hello World!"
+DELAY 1500
 GUI r
+DELAY 200
 STRING notepad
 ENTER
 DELAY 250
