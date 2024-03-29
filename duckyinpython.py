@@ -199,53 +199,6 @@ def selectPayload():
 
     return payload
 
-async def blink_led(led):
-    print("Blink")
-    if(board.board_id == 'raspberry_pi_pico'):
-        blink_pico_led(led)
-    elif(board.board_id == 'raspberry_pi_pico_w'):
-        blink_pico_w_led(led)
-
-async def blink_pico_led(led):
-    print("starting blink_pico_led")
-    led_state = False
-    while True:
-        if led_state:
-            #led_pwm_up(led)
-            #print("led up")
-            for i in range(100):
-                # PWM LED up and down
-                if i < 50:
-                    led.duty_cycle = int(i * 2 * 65535 / 100)  # Up
-                await asyncio.sleep(0.01)
-            led_state = False
-        else:
-            #led_pwm_down(led)
-            #print("led down")
-            for i in range(100):
-                # PWM LED up and down
-                if i >= 50:
-                    led.duty_cycle = 65535 - int((i - 50) * 2 * 65535 / 100)  # Down
-                await asyncio.sleep(0.01)
-            led_state = True
-        await asyncio.sleep(0)
-
-async def blink_pico_w_led(led):
-    print("starting blink_pico_w_led")
-    led_state = False
-    while True:
-        if led_state:
-            #print("led on")
-            led.value = 1
-            await asyncio.sleep(0.5)
-            led_state = False
-        else:
-            #print("led off")
-            led.value = 0
-            await asyncio.sleep(0.5)
-            led_state = True
-        await asyncio.sleep(0.5)
-
 async def monitor_buttons(button1):
     global inBlinkeyMode, inMenu, enableRandomBeep, enableSirenMode,pixel
     print("starting monitor_buttons")
